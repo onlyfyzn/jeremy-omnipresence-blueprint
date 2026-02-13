@@ -1461,6 +1461,55 @@ export default function Strategy() {
                 </div>
               ))}
             </div>
+
+            {/* Time Summary */}
+            <div
+              style={{
+                marginTop: 16,
+                padding: 16,
+                background: C.oD,
+                border: `1px solid ${C.o}20`,
+                borderRadius: 10,
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 10,
+                  color: C.dim,
+                  letterSpacing: 2,
+                  marginBottom: 6,
+                }}
+              >
+                JEREMY'S WEEKLY TIME COMMITMENT
+              </div>
+              <div style={{ display: "flex", justifyContent: "center", gap: 20, flexWrap: "wrap" }}>
+                {[{ d: "Monday call", t: "45 min" }, { d: "Script review", t: "20 min" }, { d: "Recording day", t: "2-3 hrs" }, { d: "Friday recap", t: "15 min" }].map(
+                  (x, i) => (
+                    <div key={i}>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: C.muted }}>
+                        {x.d}: 
+                      </span>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: C.o, fontWeight: 700 }}>
+                        {x.t}
+                      </span>
+                    </div>
+                  )
+                )}
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: 16,
+                  color: C.w,
+                  fontWeight: 700,
+                  marginTop: 8,
+                }}
+              >
+                Total: ~4 hours/week. Everything else is handled.
+              </div>
+            </div>
           </div>
         )}
 
@@ -1546,10 +1595,7 @@ export default function Strategy() {
 
                     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                       {ph.items.map((item, j) => (
-                        <div
-                          key={j}
-                          style={{ display: "flex", alignItems: "flex-start", gap: 8 }}
-                        >
+                        <div key={j} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
                           <span
                             style={{
                               fontFamily: "'JetBrains Mono', monospace",
@@ -1561,9 +1607,7 @@ export default function Strategy() {
                           >
                             {String(j + 1).padStart(2, "0")}
                           </span>
-                          <span style={{ fontSize: 13, color: C.text, lineHeight: 1.45 }}>
-                            {item}
-                          </span>
+                          <span style={{ fontSize: 13, color: C.text, lineHeight: 1.45 }}>{item}</span>
                         </div>
                       ))}
                     </div>
@@ -1582,6 +1626,80 @@ export default function Strategy() {
                   )}
                 </div>
               ))}
+            </div>
+
+            {/* Team */}
+            <div
+              style={{
+                marginTop: 20,
+                padding: 18,
+                background: C.surface,
+                border: `1px solid ${C.border}`,
+                borderRadius: 12,
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 10,
+                  color: C.g,
+                  letterSpacing: 2,
+                  marginBottom: 12,
+                }}
+              >
+                THE TEAM (MANAGED BY FAIZAAN)
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+                  gap: 8,
+                }}
+              >
+                {[
+                  { role: "Scriptwriter", desc: "Trained on voice playbook. Drafts from Monday ideation." },
+                  { role: "Video Editor", desc: "Long-form YouTube + short-form Reel cuts." },
+                  { role: "Graphic Designer", desc: "Carousels, thumbnails, visual assets." },
+                  { role: "Videographer", desc: "Nottingham-based for recording days OR self-film SOP." },
+                ].map((r, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      padding: 12,
+                      background: C.surfaceAlt,
+                      borderRadius: 8,
+                      border: `1px solid ${C.border}`,
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontFamily: "'JetBrains Mono', monospace",
+                        fontSize: 11,
+                        color: C.g,
+                        fontWeight: 600,
+                        marginBottom: 3,
+                      }}
+                    >
+                      {r.role}
+                    </div>
+                    <div style={{ fontSize: 11.5, color: C.muted, lineHeight: 1.4 }}>{r.desc}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div
+                style={{
+                  marginTop: 12,
+                  padding: "8px 12px",
+                  background: C.gD,
+                  borderRadius: 6,
+                  border: `1px solid ${C.g}18`,
+                }}
+              >
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, color: C.g }}>
+                  Jeremy interacts with ONE person (Faizaan) — not five freelancers in five Slack channels.
+                </span>
+              </div>
             </div>
           </div>
         )}
@@ -1680,95 +1798,6 @@ export default function Strategy() {
               ))}
             </div>
 
-            {/* Offer Ladder */}
-            <div
-              style={{
-                marginTop: 20,
-                padding: 18,
-                background: C.surface,
-                border: `1px solid ${C.border}`,
-                borderRadius: 12,
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 10,
-                  color: C.g,
-                  letterSpacing: 2,
-                  marginBottom: 12,
-                }}
-              >
-                OFFER LADDER
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-                <div
-                  style={{
-                    padding: 14,
-                    background: C.gD,
-                    border: `1px solid ${C.g}20`,
-                    borderRadius: 10,
-                  }}
-                >
-                  <div
-                    style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: 18,
-                      fontWeight: 700,
-                      color: C.g,
-                    }}
-                  >
-                    FREE
-                  </div>
-                  <div style={{ fontSize: 12.5, color: C.text, marginTop: 3 }}>
-                    Course for businesses under $100K/mo
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: 9.5,
-                      color: C.dim,
-                      marginTop: 6,
-                    }}
-                  >
-                    Builds goodwill · Dunks on competitors · Lead gen engine
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    padding: 14,
-                    background: C.oD,
-                    border: `1px solid ${C.o}20`,
-                    borderRadius: 10,
-                  }}
-                >
-                  <div
-                    style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: 18,
-                      fontWeight: 700,
-                      color: C.o,
-                    }}
-                  >
-                    $50K/YEAR
-                  </div>
-                  <div style={{ fontSize: 12.5, color: C.text, marginTop: 3 }}>
-                    Licensed system + implementation manager
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: 9.5,
-                      color: C.dim,
-                      marginTop: 6,
-                    }}
-                  >
-                    Qualifying: $100K+/mo revenue · Tech + AI + knowledge base
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         )}
 
