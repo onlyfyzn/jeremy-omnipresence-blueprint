@@ -1679,6 +1679,96 @@ export default function Strategy() {
                 </div>
               ))}
             </div>
+
+            {/* Offer Ladder */}
+            <div
+              style={{
+                marginTop: 20,
+                padding: 18,
+                background: C.surface,
+                border: `1px solid ${C.border}`,
+                borderRadius: 12,
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 10,
+                  color: C.g,
+                  letterSpacing: 2,
+                  marginBottom: 12,
+                }}
+              >
+                OFFER LADDER
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                <div
+                  style={{
+                    padding: 14,
+                    background: C.gD,
+                    border: `1px solid ${C.g}20`,
+                    borderRadius: 10,
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: 18,
+                      fontWeight: 700,
+                      color: C.g,
+                    }}
+                  >
+                    FREE
+                  </div>
+                  <div style={{ fontSize: 12.5, color: C.text, marginTop: 3 }}>
+                    Course for businesses under $100K/mo
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: 9.5,
+                      color: C.dim,
+                      marginTop: 6,
+                    }}
+                  >
+                    Builds goodwill · Dunks on competitors · Lead gen engine
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    padding: 14,
+                    background: C.oD,
+                    border: `1px solid ${C.o}20`,
+                    borderRadius: 10,
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: 18,
+                      fontWeight: 700,
+                      color: C.o,
+                    }}
+                  >
+                    $50K/YEAR
+                  </div>
+                  <div style={{ fontSize: 12.5, color: C.text, marginTop: 3 }}>
+                    Licensed system + implementation manager
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: 9.5,
+                      color: C.dim,
+                      marginTop: 6,
+                    }}
+                  >
+                    Qualifying: $100K+/mo revenue · Tech + AI + knowledge base
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
 
@@ -1872,9 +1962,7 @@ export default function Strategy() {
                     borderLeft: `3px solid ${d.color}`,
                   }}
                 >
-                  <div style={{ fontSize: 13.5, fontWeight: 600, color: C.w }}>
-                    {d.platform}
-                  </div>
+                  <div style={{ fontSize: 13.5, fontWeight: 600, color: C.w }}>{d.platform}</div>
                   <div
                     style={{
                       fontFamily: "'JetBrains Mono', monospace",
@@ -1888,6 +1976,70 @@ export default function Strategy() {
                   <div style={{ fontSize: 12, color: C.muted }}>{d.insight}</div>
                 </div>
               ))}
+            </div>
+
+            <div
+              style={{
+                marginTop: 20,
+                padding: 18,
+                background: C.surface,
+                border: `1px solid ${C.border}`,
+                borderRadius: 12,
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 10,
+                  color: C.o,
+                  letterSpacing: 2,
+                  marginBottom: 10,
+                }}
+              >
+                WHAT THIS MEANS FOR JEREMY
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {[
+                  {
+                    t: "YouTube is the engine",
+                    d: "Views up 30%. Every consulting funnel video compounds in search. This is where inbound calls come from.",
+                  },
+                  {
+                    t: "Instagram needs quality, not volume",
+                    d: "Reels reach down 35%. Scripted, intentional content outperforms random microclips. High IQ content framework applies here.",
+                  },
+                  {
+                    t: "Facebook is the free bonus",
+                    d: "Reach up 51%. Cross-posting Reels costs nothing and reaches an older demo with budget authority for $50K consulting.",
+                  },
+                  {
+                    t: "LinkedIn is saturated but converts",
+                    d: "Impressions down 23% — but Jeremy's ICP lives here. Sharper frameworks and case studies cut through the noise.",
+                  },
+                  {
+                    t: "X is for testing, not traffic",
+                    d: "Link clicks down 28%. Use it as the Hormozi testing ground — raw ideas, see what resonates, then produce winners as video.",
+                  },
+                ].map((x, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+                    <span
+                      style={{
+                        fontFamily: "'JetBrains Mono', monospace",
+                        fontSize: 9.5,
+                        color: C.o,
+                        marginTop: 2.5,
+                        fontWeight: 700,
+                      }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <span style={{ fontSize: 13, color: C.w, fontWeight: 600 }}>{x.t}: </span>
+                      <span style={{ fontSize: 12.5, color: C.muted }}>{x.d}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         )}
