@@ -1691,28 +1691,157 @@ export default function Strategy() {
               desc="Test on text, scale what works, distribute everywhere — but intentional, not freestyle."
             />
 
-            {/* Simplified for this deploy: just show the three principles */}
+            {[{
+              icon: "H",
+              title: "From Hormozi",
+              tag: "TEST ON TEXT, SCALE WHAT WORKS",
+              color: C.r,
+              bg: C.rD,
+              items: [
+                "Post raw ideas on LinkedIn + X daily (Monday text testing)",
+                "Track which posts get highest engagement over 7 days",
+                "Only invest video production into validated ideas",
+                "SPCL framework: Status, Power, Credibility, Likeness",
+                "Free course to build goodwill → high-ticket for serious buyers",
+              ],
+            },
+            {
+              icon: "G",
+              title: "From GaryVee",
+              tag: "REVERSE PYRAMID DISTRIBUTION",
+              color: C.y,
+              bg: C.yD,
+              items: [
+                "One pillar content piece → 20+ micro-content derivatives",
+                "YouTube long-form is the pillar (filmed Wednesday)",
+                "Team chops into Reels, Shorts, carousels, text posts",
+                "Platform-contextual: same message, different containers",
+                "Document the operation, don't just create from scratch",
+              ],
+            },
+            {
+              icon: "J",
+              title: "Jeremy's Adaptation",
+              tag: "INTENTIONAL, NOT FREESTYLE",
+              color: C.o,
+              bg: C.oD,
+              items: [
+                "Scripts Reels intentionally — no random riffing and microclipping",
+                "High IQ content: terminology + visuals that deflect non-buyers",
+                "Won't parade client wins — builds trust through frameworks instead",
+                "Monday ideation → Wednesday filming → Friday review & pivot",
+                "Quality over volume: 1 great post/day beats 4 mediocre ones",
+              ],
+            }].map((m, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: 18,
+                  background: i === 2 ? `linear-gradient(135deg, ${C.oD}, ${C.gD})` : C.surface,
+                  border: `1px solid ${i === 2 ? C.o + "20" : C.border}`,
+                  borderRadius: 12,
+                  marginBottom: 10,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+                  <div
+                    style={{
+                      width: 30,
+                      height: 30,
+                      borderRadius: 7,
+                      background: i === 2 ? `linear-gradient(135deg, ${C.o}, ${C.g})` : m.bg,
+                      border: i < 2 ? `1px solid ${m.color}25` : "none",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontFamily: "'Playfair Display', serif",
+                      fontWeight: 700,
+                      fontSize: 15,
+                      color: i === 2 ? C.w : m.color,
+                    }}
+                  >
+                    {m.icon}
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 15, fontWeight: 700, color: C.w }}>
+                      {m.title}
+                    </div>
+                    <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9.5, color: m.color }}>
+                      {m.tag}
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+                  {m.items.map((t, j) => (
+                    <div key={j} style={{ display: "flex", alignItems: "flex-start", gap: 7 }}>
+                      <span
+                        style={{
+                          fontFamily: "'JetBrains Mono', monospace",
+                          fontSize: 9.5,
+                          color: m.color,
+                          marginTop: 2.5,
+                          fontWeight: 700,
+                        }}
+                      >
+                        {String(j + 1).padStart(2, "0")}
+                      </span>
+                      <span style={{ fontSize: 12.5, color: C.text, lineHeight: 1.4 }}>{t}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+
             <div
               style={{
-                padding: 18,
-                background: `linear-gradient(135deg, ${C.oD}, ${C.gD})`,
-                border: `1px solid ${C.o}20`,
-                borderRadius: 12,
+                padding: 16,
+                background: C.surface,
+                border: `1px solid ${C.border}`,
+                borderRadius: 10,
+                textAlign: "center",
+                marginTop: 4,
               }}
             >
               <div
                 style={{
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 10,
-                  color: C.o,
+                  fontSize: 9.5,
+                  color: C.dim,
                   letterSpacing: 2,
-                  marginBottom: 12,
+                  marginBottom: 10,
                 }}
               >
                 THE FEEDBACK LOOP
               </div>
-              <div style={{ fontSize: 13, color: C.text, lineHeight: 1.6 }}>
-                Text test → Track winners → Script & film → Distribute → Review & repeat.
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 6,
+                  flexWrap: "wrap",
+                }}
+              >
+                {["Text Test (Mon)", "→", "Track Winners", "→", "Script & Film (Wed)", "→", "Distribute (Thu-Sat)", "→", "Review & Repeat (Fri)"].map(
+                  (s, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        fontFamily: s === "→" ? "'DM Sans'" : "'JetBrains Mono', monospace",
+                        fontSize: s === "→" ? 14 : 10,
+                        color: s === "→" ? C.o : C.text,
+                        fontWeight: s === "→" ? 400 : 600,
+                        padding: s === "→" ? 0 : "5px 10px",
+                        background: s === "→" ? "transparent" : `${C.o}06`,
+                        borderRadius: 5,
+                        border: s === "→" ? "none" : `1px solid ${C.o}12`,
+                      }}
+                    >
+                      {s}
+                    </span>
+                  )
+                )}
               </div>
             </div>
           </div>
